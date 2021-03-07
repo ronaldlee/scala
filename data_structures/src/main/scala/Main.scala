@@ -1,8 +1,9 @@
 import btree._
 
 object Main extends App {
-  //Collection
+  Collection
 
+  /*
   val btree = BTree(Node(9))
   btree.insert(Node(8))
   btree.insert(Node(10))
@@ -12,5 +13,6 @@ object Main extends App {
   btree.insert(Node(17))
 
   btree.printTree()
+   */
 
 }

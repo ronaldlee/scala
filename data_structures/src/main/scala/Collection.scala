@@ -50,4 +50,36 @@ object Collection {
   mm("a") = 3
   println("get mutable map for key 'a': " + mm.get("a").get)
 
+  //ListBuffer
+  val l = mutable.ListBuffer[String]()
+  l += "Yoo"
+  l += "Yee"
+  l.foreach(println)
+
+  println("get mutable list at 0: " + l(0))
+
+  l.remove(0)
+  println("after removed index 0")
+  l.foreach(println)
+
+  for (i <- 0 until l.length) {
+    println("boo: " + l(i))
+  }
+
+  case class Node(name:String)
+
+  val n = Node("Yoo")
+  println("NN: " + n.name)
+
+  val mm2 = Map[String, Node]("a" -> Node("Mary"))
+
+  println("MM name: " + mm2.get("a").get.name)
+
+  val mm3 = mutable.Map[String, Node]("a" -> Node("John"))
+
+  println("MM3 name: " + mm3.get("a").get.name)
+  mm3("a") = Node("Gary")
+  println("MM3 name after update: " + mm3.get("a").get.name)
+
+
 }
