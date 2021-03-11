@@ -33,6 +33,14 @@ object ForComprehension {
 
   println("l3: " + l4)
 
+  //for-comprehension on None
+  println("For-comprehension on None")
+  for {
+    value <- None
+  } println("Should not get here: " + value)
+  for (value <- None) {
+    println("Should not get here: " + value)
+  }
 
 
 }
