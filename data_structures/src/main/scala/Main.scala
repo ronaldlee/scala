@@ -1,7 +1,7 @@
 import btree._
 
 object Main extends App {
-  Collection
+  //Collection
 
   /*
   val btree = BTree(Node(9))
@@ -15,4 +15,5 @@ object Main extends App {
   btree.printTree()
    */
 
+  ListTest
 }
