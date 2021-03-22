@@ -22,4 +22,11 @@ object ListTest {
   l = "0" +: l
   println("prepend: " + l)
 
+  //append multiple
+  l = l :+ "D" :+ "E"
+  println("append multiple: " + l)
+
+  //prepend multiple with +:
+  l = "-2" +: "-1" +: l
+  println("prepend multiple: " + l)
 }
