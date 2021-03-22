@@ -29,6 +29,8 @@ object StringVsRegex {
   println("time use split char: " + time2)
 
   //really fast!
+  //Actually, internally when it detects it is just a single-char string
+  //it doesn't use regex, but only uses 'indexOf' and loop thru it to get the tokens.
   val (result3, time3) = timer(useSplitRegex(delimitedStr))
   println("time use split regex: " + time3)
 }
