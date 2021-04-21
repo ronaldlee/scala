@@ -1,3 +1,8 @@
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration.Duration
+import scala.concurrent.{Await, Future}
+import scala.util.{Failure, Success}
+
 object ForComprehension {
 
   val l = List("A","B","C")
@@ -41,6 +46,25 @@ object ForComprehension {
   for (value <- None) {
     println("Should not get here: " + value)
   }
+
+  //on Future
+  val r3 = for {
+    v1 <- Future(Some(true))
+    //_ <- {println("RR v1: " + v1); Future()}
+    r1 = v1.getOrElse(false)
+  } yield r1
+
+  println("for-comp future: result: " + r3)
+
+  //Await.result(r3, Duration.Inf)
+
+  /*
+  r3 onComplete {
+    case Success(_) => println("success: " + _)
+    case Failure(exception) => println("fail: " + exception)
+  }
+   */
+
 
 
 }
